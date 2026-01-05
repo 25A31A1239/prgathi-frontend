@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Notification</title>
+    <link rel="stylesheet" href="./pragathi.css">
+</head>
+<body>
+    <img src="https://tse2.mm.bing.net/th/id/OIP.W5TrmNp9xpYoCpgmDv81iQHaCU?rs=1&pid=ImgDetMain&o=7&rm=3" alt="">
+    <br>
+    <h2>send complaint for better <i style="color: rgb(52, 14, 222);">Pragati<i></h2>
+    <form id="notificationForm">
+        <label for="name">Department</label> 
+       <input type="text" id="name" name="name" value="" required><br><br>
+        <label for="note">Complaint Note:</label>
+        <textarea id="note" name="note" required></textarea><br><br>
+
+        <button type="submit">Send complaint</button>
+    </form>
+
+    <p id="response"></p>
+
+    <script>
+        const form = document.getElementById('notificationForm');
+        const responseText = document.getElementById('response');
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            const data = {
+                name: document.getElementById('name').value,
+                complaintNote: document.getElementById('note').value
+            };
+
+            fetch('http://localhost:8080/sendNotification', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+            .then(res => res.json())
+            .then(result => {
+                responseText.textContent = 'Notification sent successfully!';
+                form.reset();
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                responseText.textContent = 'Failed to send notification.';
+            });
+        });
+    </script>
+</body>
+</html>

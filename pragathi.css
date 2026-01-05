@@ -1,0 +1,111 @@
+/* Reset some default browser styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Page background */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Heading */
+h2 {
+    margin-bottom: 20px;
+    color: #b71c1c;
+}
+
+/* Form container */
+form {
+    background: rgba(255, 255, 255, 0.15); /* transparent */
+    backdrop-filter: blur(12px);          /* blur effect */
+    -webkit-backdrop-filter: blur(12px);  /* Safari support */
+
+    padding: 30px 35px;
+    width: 700px;
+
+    border-radius: 10px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+
+/* Labels */
+label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Input & textarea */
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* Textarea height */
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Focus effect */
+input:focus,
+textarea:focus {
+    border-color: #1976d2;
+    outline: none;
+    box-shadow: 0 0 5px rgba(25, 118, 210, 0.4);
+}
+
+/* Submit button */
+button {
+    width: 100%;
+    padding: 12px;
+    background-color: #1976d2;
+    color: white;
+    font-size: 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover effect */
+button:hover {
+    background-color: #0d47a1;
+}
+
+/* Response message */
+#response {
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: bold;
+    color: rgb(221, 224, 221);
+    text-align: center;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    form {
+        padding: 25px 20px;
+    }
+}
+body{
+    background-image: url("https://images.shiksha.com/mediadata/images/1744256792phpKpEvHI.jpeg");
+   background-size: 100%;
+    background-repeat: no-repeat;
+}
